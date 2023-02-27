@@ -1,6 +1,6 @@
 [package]
 name = "harfbuzz-bindings"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Benjamin Eder <barny.eder@gmail.com>"]
 license = "MIT"
@@ -15,5 +15,5 @@ build = "build.rs"
 [dependencies]
 
 [build-dependencies]
-bindgen = "0.64.0"
+bindgen = "0.60.1"
 vcpkg = "0.2.15"
