@@ -23,6 +23,7 @@ fn main() {
 fn generate_bindings(lib: &Library) {
     let mut bindings = bindgen::Builder::default()
         .header("wrapper.h")
+        .prepend_enum_name(false)
         .parse_callbacks(Box::new(bindgen::CargoCallbacks)); // Tell cargo to invalidate the built crate whenever any of the included header files changed.
 
     for include_path in &lib.include_paths {
