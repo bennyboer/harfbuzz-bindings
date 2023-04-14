@@ -17,3 +17,14 @@ build = "build.rs"
 [build-dependencies]
 bindgen = "0.60.1"
 vcpkg = "0.2.15"
+
+[package.metadata.vcpkg]
+git = "https://github.com/microsoft/vcpkg"
+rev = "809266d"
+dependencies = ["harfbuzz"] # fallbacks for versions that are not listed below
+
+[package.metadata.vcpkg.target]
+x86_64-pc-windows-msvc = { dependencies = ["harfbuzz:x64-windows-static-md"] }
+x86_64-unknown-linux-gnu = { dependencies = ["harfbuzz:x64-linux"] }
+x86_64-apple-darwin = { dependencies = ["harfbuzz:x64-osx"] }
+aarch64-apple-darwin = { dependencies = ["harfbuzz:arm64-osx"] }

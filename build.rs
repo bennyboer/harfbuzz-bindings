@@ -2,12 +2,22 @@ extern crate bindgen;
 
 use std::env;
 use std::path::PathBuf;
+use std::process::Command;
 
 use vcpkg::Library;
 
 const HARFBUZZ_PACKAGE_NAME: &'static str = "harfbuzz";
 
 fn main() {
+    Command::new("cargo")
+        .args(&["install", "cargo-vcpkg"])
+        .status()
+        .expect("Failed to install cargo-vcpkg");
+    Command::new("cargo")
+        .args(&["vcpkg", "build"])
+        .status()
+        .expect("Failed to build vcpkg and dependencies, please run `cargo clean` and try again");
+
     println!("cargo:rerun-if-changed=wrapper.h");
 
     let harfbuzz_package = vcpkg::Config::new()
