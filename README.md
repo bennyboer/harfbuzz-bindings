@@ -15,7 +15,7 @@ Add this dependency to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-harfbuzz-bindings = "0.1"
+harfbuzz-bindings = "0.2"
 ```
 
 And fire up `cargo build`!

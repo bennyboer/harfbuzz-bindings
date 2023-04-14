@@ -1,6 +1,6 @@
 [package]
 name = "harfbuzz-bindings"
-version = "0.1.2"
+version = "0.2.0"
 edition = "2021"
 authors = ["Benjamin Eder <barny.eder@gmail.com>"]
 license = "MIT"
