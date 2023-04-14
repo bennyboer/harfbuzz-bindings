@@ -21,6 +21,7 @@ vcpkg = "0.2.15"
 [package.metadata.vcpkg]
 git = "https://github.com/microsoft/vcpkg"
 rev = "809266d"
+dependencies = ["harfbuzz"] # fallbacks for versions that are not listed below
 
 [package.metadata.vcpkg.target]
 x86_64-pc-windows-msvc = { dependencies = ["harfbuzz:x64-windows-static-md"] }
