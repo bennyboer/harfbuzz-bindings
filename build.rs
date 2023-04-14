@@ -16,7 +16,7 @@ fn main() {
     Command::new("cargo")
         .args(&["vcpkg", "build"])
         .status()
-        .expect("Failed to build vcpkg and dependencies");
+        .expect("Failed to build vcpkg and dependencies, please run `cargo clean` and try again");
 
     println!("cargo:rerun-if-changed=wrapper.h");
 
